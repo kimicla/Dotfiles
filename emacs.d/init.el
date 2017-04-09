@@ -27,6 +27,10 @@
   (require 'init-git)
   (require 'init-ffip)
   (require 'init-ido)
+  (require 'init-acejump)
+  (require 'init-acewindow)
+  (require 'init-sh)
+  (require 'init-smex)
   )
 
 (add-hook 'suspend-hook
