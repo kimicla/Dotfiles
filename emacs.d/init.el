@@ -25,6 +25,8 @@
   (require 'init-exec-path)
   (require 'init-theme)
   (require 'init-git)
+  (require 'init-ffip)
+  (require 'init-ido)
   )
 
 (add-hook 'suspend-hook
