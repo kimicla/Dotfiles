@@ -184,9 +184,9 @@ ARCHIVE is the string name of the package archive.")
 
 (package-initialize)
 
-;; (require-package 'ample-theme)
-;; (require-package 'color-theme-solarized)
-;; (require-package 'powerline)
+(require-package 'ample-theme)
+(require-package 'color-theme-solarized)
+(require-package 'powerline)
 (require-package 'moe-theme)
 
 (require-package 'dash)

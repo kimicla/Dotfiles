@@ -22,6 +22,8 @@
 (let ((file-name-handler-alist nil))
   (require 'init-site-lisp)
   (require 'init-elpa)
+  (require 'init-exec-path)
+  (require 'init-theme)
   (require 'init-git)
   )
 
