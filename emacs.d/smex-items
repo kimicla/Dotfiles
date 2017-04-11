@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ magit-gitignore
  cd
  5x5
  arp
  dbx
  dig
  erc
- ert
 )
 
 ;; ----- smex-data -----
 (
- 
+ (magit-gitignore . 1)
+ (org-date-from-calendar . 1)
 )
