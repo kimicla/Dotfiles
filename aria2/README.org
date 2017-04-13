@@ -10,7 +10,7 @@
 
   1. Using YAAW.
 
-     YAAW don't support `--rpc-secret=<secret>` directly, use `http://token:secret@localhost:6801/jsonrpc` to specify secret.
+     YAAW don't support ~--rpc-secret=<secret>~ directly, use ~http://token:secret@localhost:6801/jsonrpc~ to specify secret.
 
   2. Using 百度网盘.
 
