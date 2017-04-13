@@ -23,6 +23,7 @@
   (require 'init-elpa)
   (require 'init-exec-path)
   (require 'init-theme)
+  (require 'init-helm)
   (require 'init-git)
   (require 'init-ffip)
   (require 'init-ido)
@@ -30,10 +31,14 @@
   (require 'init-acewindow)
   (require 'init-sh)
   (require 'init-smex)
+  (require 'init-web-mode)
   )
 
 ;; auto-complete configuration
 (ac-config-default)
+
+
+;;(helm-projectile-on)
 
 (add-hook 'suspend-hook
 	  (lambda () (or (y-or-n-p "Really suspend? ")
@@ -43,3 +48,17 @@
 
 
 (global-linum-mode 1)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (helm web-mode smex projectile powerline neotree moe-theme magit-gitflow idomenu ido-ubiquitous guide-key google-translate flx-ido find-file-in-project company color-theme-solarized browse-kill-ring auto-complete ample-theme ace-window ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

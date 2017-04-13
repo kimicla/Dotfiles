@@ -117,6 +117,7 @@ But you may use safer HTTPS instead.")
     hemisu-theme
     heroku-theme
     google-translate
+    helm
     )
   "Don't install any Melpa packages except these packages")
 
@@ -206,7 +207,7 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'browse-kill-ring)
 (require-package 'guide-key)
 (require-package 'web-mode)
-;; (require-package 'google-translate)
+(require-package 'helm)
 
 
 ;; Clojure
