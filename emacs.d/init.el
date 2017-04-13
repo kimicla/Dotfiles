@@ -23,7 +23,6 @@
   (require 'init-elpa)
   (require 'init-exec-path)
   (require 'init-theme)
-  (require 'init-helm)
   (require 'init-git)
   (require 'init-ffip)
   (require 'init-ido)
@@ -32,6 +31,7 @@
   (require 'init-sh)
   (require 'init-smex)
   (require 'init-web-mode)
+  (require 'init-helm)
   )
 
 ;; auto-complete configuration

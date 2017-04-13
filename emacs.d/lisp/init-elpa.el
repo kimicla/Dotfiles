@@ -118,6 +118,7 @@ But you may use safer HTTPS instead.")
     heroku-theme
     google-translate
     helm
+    helm-projectile
     )
   "Don't install any Melpa packages except these packages")
 
@@ -208,6 +209,7 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'guide-key)
 (require-package 'web-mode)
 (require-package 'helm)
+(require-package 'helm-projectile)
 
 
 ;; Clojure
