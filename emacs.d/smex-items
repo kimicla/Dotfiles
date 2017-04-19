@@ -14,5 +14,5 @@
 (
  (magit-gitignore . 1)
  (org-date-from-calendar . 1)
- (helm-M-x . 2)
+ (helm-M-x . 5)
 )

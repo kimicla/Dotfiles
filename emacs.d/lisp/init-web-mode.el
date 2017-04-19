@@ -22,6 +22,7 @@
 (add-to-list 'auto-mode-alist '("\\.eex?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue?\\'" . vue-mode))
 
 (defun flymake-html-init ()
        (let* ((temp-file (flymake-init-create-temp-buffer-copy
@@ -43,6 +44,7 @@
     (flymake-mode 1)))
 
 (defun web-mode-hook-setup ()
+  "Hooks for Web mode."
   (unless (is-buffer-file-temp)
     (flymake-html-load)
     (enable-flyspell-mode-conditionally)
@@ -50,7 +52,8 @@
     (remove-hook 'yas-after-exit-snippet-hook
                  'web-mode-yasnippet-exit-hook t)
     (remove-hook 'yas/after-exit-snippet-hook
-                 'web-mode-yasnippet-exit-hook t)))
+                 'web-mode-yasnippet-exit-hook t)
+    (setq web-mode-markup-indent-offset 2)))
 
 (add-hook 'web-mode-hook 'web-mode-hook-setup)
 

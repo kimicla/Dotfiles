@@ -119,6 +119,8 @@ But you may use safer HTTPS instead.")
     google-translate
     helm
     helm-projectile
+    mmm-mode
+    vue-mode
     )
   "Don't install any Melpa packages except these packages")
 
@@ -210,7 +212,8 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'web-mode)
 (require-package 'helm)
 (require-package 'helm-projectile)
-
+(require-package 'mmm-mode)
+(require-package 'vue-mode)
 
 ;; Clojure
 ;; (require-package 'cider)

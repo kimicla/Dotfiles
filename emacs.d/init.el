@@ -37,9 +37,6 @@
 ;; auto-complete configuration
 (ac-config-default)
 
-
-;;(helm-projectile-on)
-
 (add-hook 'suspend-hook
 	  (lambda () (or (y-or-n-p "Really suspend? ")
 			 (error "Suspend canceled"))))
