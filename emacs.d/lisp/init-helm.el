@@ -41,4 +41,6 @@
 (define-key helm-command-map (kbd "C-c w") 'helm-wikipedia-suggest)
 (define-key helm-command-map (kbd "SPC")   'helm-all-mark-rings)
 
+(global-set-key (kbd "C-c p") 'projectile-command-map)
+
 (provide 'init-helm)

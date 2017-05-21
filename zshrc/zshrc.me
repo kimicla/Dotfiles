@@ -7,7 +7,7 @@ export ZSH=/Users/kimi/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -78,8 +78,9 @@ export LC_ALL=en_US.UTF-8
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export M2_HOME=~/Software/maven
+export GRADLE_HOME=~/Software/gradle
 
-export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 export NVM_DIR="/usr/local/Cellar/nvm/0.33.1"
