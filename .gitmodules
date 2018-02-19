@@ -1,7 +1,6 @@
-[submodule "purcell.emacs.d"]
-	path = purcell.emacs.d
-	url = git@github.com:kimichen13/emacs.d.git
-
 [submodule "spacemacs"]
 	path = spacemacs
 	url = git@github.com:kimichen13/spacemacs.git
+[submodule "purcell.emacs"]
+	path = purcell.emacs
+	url = git@github.com:kimichen13/emacs.d.git
