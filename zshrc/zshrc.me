@@ -51,7 +51,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew emacs git-flow gradle mvn osx ruby sudo autojump grails vagrant)
+plugins=(git brew emacs git-flow gradle mvn osx ruby sudo autojump grails vagrant docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,8 +80,9 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export M2_HOME=~/Software/maven
 export GRADLE_HOME=~/Software/gradle
 export GRAILS_HOME=~/Software/grails
+export GROOVY_HOME=~/Software/groovy
 
-export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$GROOVY_HOME/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 #for Clojure
@@ -103,6 +104,7 @@ alias ek='emacsclient -e "(kill-emacs)"'
 alias es='emacs --daemon'
 alias tospace='ln -sfn /Users/kimi/Github/Dotfiles/spacemacs ~/.emacs.d'
 alias toorigin='ln -sfn /Users/kimi/Github/Dotfiles/emacs.d/ ~/.emacs.d'
+alias topurcell='ln -sfn /Users/kimi/Github/Dotfiles/purcell.emacs ~/.emacs.d'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

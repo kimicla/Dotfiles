@@ -29,6 +29,7 @@
   (require 'init-acejump)
   (require 'init-acewindow)
   (require 'init-sh)
+;  (require 'init-org)
   (require 'init-smex)
   (require 'init-web-mode)
   (require 'init-helm)
