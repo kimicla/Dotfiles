@@ -49,7 +49,7 @@ ZSH_THEME="ys"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Example format: plugins=(rails git textmate ruby lighthouse nvm)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew emacs git-flow gradle mvn osx ruby sudo autojump grails vagrant docker)
 
@@ -81,6 +81,7 @@ export M2_HOME=~/Software/maven
 export GRADLE_HOME=~/Software/gradle
 export GRAILS_HOME=~/Software/grails
 export GROOVY_HOME=~/Software/groovy
+export EMACS="*term*"
 
 export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$GROOVY_HOME/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
@@ -88,8 +89,9 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 #for Clojure
 export PATH=~/Software/Leiningen:$PATH
 
-export NVM_DIR="/usr/local/Cellar/nvm/0.33.1"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -97,8 +99,7 @@ export NVM_DIR="/usr/local/Cellar/nvm/0.33.1"
 # For a full list of active aliases, run `alias`.
 
 # Example aliases for emacs
-alias emacs="/usr/local/Cellar/emacs/25.2/Emacs.app/Contents/MacOS/Emacs -nw"
-# alias emacs="/usr/local/Cellar/emacs/HEAD-8e1f45d/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs="/usr/local/Cellar/emacs/25.3/Emacs.app/Contents/MacOS/Emacs -nw"
 alias e='emacsclient -t'
 alias ek='emacsclient -e "(kill-emacs)"'
 alias es='emacs --daemon'
@@ -112,3 +113,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Aliases for aria2
 alias ds='aria2c --conf-path=/Users/kimi/.aria2.conf -D'
 
+# docker
+alias dockerkill='docker kill $(docker ps -a -q)'
+alias dockercleanc='docker rm $(docker ps -a -q)'
+alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
+alias dockerclean='dockercleanc || true && dockercleani'
