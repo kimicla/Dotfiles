@@ -481,90 +481,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ;;; org
-  (with-eval-after-load 'org
-    (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
-    (setq-default dotspacemacs-configuration-layers '
-                  ((org :variables org-enable-github-support t)))
-    (setq-default dotspacemacs-configuration-layers '
-                  ((org :variables org-enable-bootstrap-support t)))
-    )
-
-  ;; define the refile targets
-  (defvar org-agenda-dir "" "gtd org files location")
-  (setq-default org-agenda-dir "~/Documents/ORG-MODE")
-  (setq org-agenda-file-journal (expand-file-name "journal.org" org-agenda-dir))
-  (setq org-agenda-file-inbox (expand-file-name "inbox.org" org-agenda-dir))
-  (setq org-agenda-file-draft (expand-file-name "draft.org" org-agenda-dir))
-
-  (setq org-agenda-file-thinkimi-billing (expand-file-name "thinkimi-billing.org" org-agenda-dir))
-
-  (setq org-agenda-file-note (expand-file-name "notes.org" org-agenda-dir))
-  (setq org-agenda-file-gtd (expand-file-name "gtd.org" org-agenda-dir))
-  (setq org-agenda-file-code-snippet (expand-file-name "snippet.org" org-agenda-dir))
-  (setq org-default-notes-file (expand-file-name "gtd.org" org-agenda-dir))
-  (setq org-agenda-files (list org-agenda-dir))
-
-  (with-eval-after-load 'org-agenda
-    (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
-    (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
-      "." 'spacemacs/org-agenda-transient-state/body)
-    )
-
-p  ;; the %i would copy the selected text into the template
-  ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
-  ;;add multi-file journal
-  (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline org-agenda-file-gtd "Workspace")
-           "* TODO [#B] %?\n  %i\n"
-           :empty-lines 1)
-          ("n" "Notes" entry (file+headline org-agenda-file-note "Quick Notes")
-           "* %?\n  %i\n %U"
-           :empty-lines 1)
-          ("b" "Blog Ideas" entry (file+headline org-agenda-file-note "Blog Ideas")
-           "* TODO [#B] %?\n  %i\n %U"
-           :empty-lines 1)
-          ("s" "Code Snippet" entry
-           (file org-agenda-file-code-snippet)
-           "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
-          ("l" "Links" entry (file+headline org-agenda-file-note "Quick notes")
-           "* TODO [#C] %?\n  %i\n %a \n %U"
-           :empty-lines 1)
-
-          ("j" "Journal" entry (file+datetree org-agenda-file-journal)
-           "* %U - %^{heading}\n\n %?\n")
-          ("i" "Inbox" entry (file org-agenda-file-inbox)
-           "* %U - %^{heading} %^g\n\n %?\n")
-          ("d" "Draft" entry (file org-agenda-file-draft)
-           "* %^{heading} %t %^g\n\n %?\n")
-
-          ("w" "Thinkimi")
-          ("wb" "Billing" plain (file org-agenda-file-thinkimi-billing)
-           " | %^{日期} | %^{总利润} | %^{毛毛} | %^{代代} | %^{成功笔数/总笔数} | %u |\n" :kill-buffer t)
-          ("wt" "Todo" entry (file+headline org-agenda-file-gtd "Thinkimi")
-           "* TODO [#A] %?\n  %i\n %U"
-           :empty-lines 1)
-          ("wc" "Charge" entry (file+headline org-agenda-file-gtd "Thinkimi")
-           "* TODO [#B] Charge number %? for \n  %i\n %U"
-           :empty-lines 1)
-          ))
-
-  ;;An entry without a cookie is treated just like priority ' B '.
-  ;;So when create new task, they are default 重要且紧急
-  (setq org-agenda-custom-commands
-        '(
-          ("w" . "任务安排")
-          ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
-          ("wb" "重要且不紧急的任务" tags-todo "-Weekly-Monthly-Daily+PRIORITY=\"B\"")
-          ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
-          ("b" "Blog" tags-todo "BLOG")
-          ("p" . "项目安排")
-          ("pw" tags-todo "PROJECT+WORK+CATEGORY=\"thinkimi\"")
-          ("pl" tags-todo "PROJECT+DREAM+CATEGORY=\"kimi\"")
-          ("W" "Weekly Review"
-           ((stuck "") ;; review stuck projects as designated by org-stuck-projects
-            (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
-            ))))
+  (load-file "~/Dropbox/config/emacs/org-mode-kimi.el")
 
   )
 
@@ -582,7 +499,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (pyim pyim-basedict pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib avy volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation column-enforce-mode nginx-mode zenburn-theme solarized-theme kaolin-themes gruber-darker-theme doom-themes all-the-icons memoize cyberpunk-theme zen-and-art-theme yasnippet-snippets yaml-mode xterm-color white-sand-theme which-key wgrep use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smex smeargle shell-pop seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pcre2el overseer orgit organic-green-theme org-present org-pomodoro org-mime org-download org-bullets org-brain omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme neotree naquadah-theme nameless mustang-theme multi-term monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit-svn magit-gitflow madhat2r-theme macrostep lush-theme light-soap-theme jbeans-theme jazz-theme ivy-xref ivy-hydra ir-black-theme inkpot-theme htmlize heroku-theme hemisu-theme helm-make hc-zenburn-theme gruvbox-theme grandshell-theme gotham-theme gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gandalf-theme fuzzy flx flatui-theme flatland-theme farmhouse-theme eziam-theme exotica-theme exec-path-from-shell evil-org evil-magit espresso-theme eshell-z eshell-prompt-extras esh-help elisp-slime-nav dracula-theme django-theme diminish darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme counsel company-statistics color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme bind-map badwolf-theme auto-yasnippet auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme ac-ispell))))
+    (slack circe oauth2 request websocket emojify ht emoji-cheat-sheet-plus company-emoji pyim pyim-basedict pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib avy volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation column-enforce-mode nginx-mode zenburn-theme solarized-theme kaolin-themes gruber-darker-theme doom-themes all-the-icons memoize cyberpunk-theme zen-and-art-theme yasnippet-snippets yaml-mode xterm-color white-sand-theme which-key wgrep use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smex smeargle shell-pop seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pcre2el overseer orgit organic-green-theme org-present org-pomodoro org-mime org-download org-bullets org-brain omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme neotree naquadah-theme nameless mustang-theme multi-term monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme magit-svn magit-gitflow madhat2r-theme macrostep lush-theme light-soap-theme jbeans-theme jazz-theme ivy-xref ivy-hydra ir-black-theme inkpot-theme htmlize heroku-theme hemisu-theme helm-make hc-zenburn-theme gruvbox-theme grandshell-theme gotham-theme gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gandalf-theme fuzzy flx flatui-theme flatland-theme farmhouse-theme eziam-theme exotica-theme exec-path-from-shell evil-org evil-magit espresso-theme eshell-z eshell-prompt-extras esh-help elisp-slime-nav dracula-theme django-theme diminish darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme counsel company-statistics color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme bind-map badwolf-theme auto-yasnippet auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
