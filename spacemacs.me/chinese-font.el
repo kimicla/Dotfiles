@@ -47,7 +47,7 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
 
 (kimi-set-font
  '("Consolas" "Monaco" "DejaVu Sans Mono" "Monospace" "Courier New") ":pixelsize=14"
- '("STFangsong" "Microsoft Yahei" "文泉驿等宽微米黑" "黑体" "新宋体" "宋体"))
+ '("STFangsong" "Microsoft Yahei" "文泉驿等宽微米黑" "黑体" "新宋体" "宋体") 16)
 
 (global-set-key (kbd "<s-up>") 'text-scale-increase)
 (global-set-key (kbd "<s-down>") 'text-scale-decrease)
