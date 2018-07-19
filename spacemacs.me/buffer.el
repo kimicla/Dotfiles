@@ -2,4 +2,4 @@
 
 (golden-ratio-mode 1)
 
-(require 'buffer)
+(provide 'buffer)
