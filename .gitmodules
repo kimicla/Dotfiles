@@ -1,6 +1,7 @@
 [submodule "spacemacs"]
 	path = spacemacs
 	url = git@github.com:kimichen13/spacemacs.git
+	branch = develop
 [submodule "purcell.emacs"]
 	path = purcell.emacs
 	url = git@github.com:kimichen13/emacs.d.git
