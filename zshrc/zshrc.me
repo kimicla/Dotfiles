@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kimi/.oh-my-zsh
+export ZSH=/Users/chenmaomao/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="yskimi"
+ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_THEME="yskimi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse nvm)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew emacs git-flow gradle mvn osx ruby sudo autojump grails vagrant docker)
+plugins=(git emacs git-flow gradle mvn osx ruby sudo autojump grails vagrant docker)
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -78,20 +78,21 @@ export LC_ALL=en_US.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-export M2_HOME=~/Software/maven
-export GRADLE_HOME=~/Software/gradle
-export GRAILS_HOME=~/Software/grails
-export GROOVY_HOME=~/Software/groovy
+# export JAVA_HOME="$(/usr/libexec/java_home -v 2.8)"
+#export M2_HOME=~/Software/maven
+#export GRADLE_HOME=~/Software/gradle
+#export GRAILS_HOME=~/Software/grails
+#export GROOVY_HOME=~/Software/groovy
 export EMACS="*term*"
 
-export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$GROOVY_HOME/bin:$PATH
+# export path=$JAVA_HOME/bin:$PATH
+#export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$GROOVY_HOME/bin:$PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/10/bin
+#export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/10/bin
 
 #for Clojure
-export PATH=~/Software/Leiningen:$PATH
+#export PATH=~/Software/Leiningen:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -103,8 +104,8 @@ export NVM_DIR="$HOME/.nvm"
 # For a full list of active aliases, run `alias`.
 
 # Example aliases for emacs
-# alias emacs="/usr/local/Cellar/emacs/25.3/Emacs.app/Contents/MacOS/Emacs -nw"
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs="/usr/local/Cellar/emacs/26.1_1/bin/emacs -nw"
+# alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias e='emacsclient -t'
 alias ek='emacsclient -e "(kill-emacs)"'
 alias es='emacs --daemon'
