@@ -163,12 +163,15 @@ alias dockercleanc='docker rm $(docker ps -a -q)'
 alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
 alias dockerclean='dockercleanc || true && dockercleani'
 
-export http_proxy=http://127.0.0.1:1087
-export https_proxy=$http_proxy
-export NO_PROXY='127.0.0.1,localhost'
+#export http_proxy=http://127.0.0.1:1087
+#export https_proxy=$http_proxy
+#export NO_PROXY='127.0.0.1,localhost'
+alias goproxy='export http_proxy=http://127.0.0.1:1087 https_proxy=http://127.0.0.1:1087'
+alias disproxy='unset http_proxy https_proxy'
 
 # git rm --cached
 alias ignore='git rm --cached $1'
 
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="$PATH":"$HOME/Documents/Install/platform-tools"
