@@ -1,9 +1,9 @@
 #!/bin/zsh
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/chenmaomao/.oh-my-zsh
+export ZSH=/Users/kimichen/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,7 +52,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse nvm)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git emacs git-flow gradle mvn osx ruby sudo autojump grails vagrant docker)
+plugins=(git emacs git-flow gradle mvn osx ruby sudo autojump docker)
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -76,28 +76,28 @@ export LC_ALL=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# export JAVA_HOME="$(/usr/libexec/java_home -v 2.8)"
-export M2_HOME=~/Documents/Install/maven
-#export GRADLE_HOME=~/Software/gradle
-#export GRAILS_HOME=~/Software/grails
-#export GROOVY_HOME=~/Software/groovy
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export M2_HOME=~/Software/Maven
+export GRADLE_HOME=~/Software/Gradle
+export GRADLE_USER_HOME=~/.gradle
+export SOFT_HOME=~/Software/bin
 export EMACS="*term*"
 
-# export path=$JAVA_HOME/bin:$PATH
-#export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRAILS_HOME/bin:$GRADLE_HOME/bin:$GROOVY_HOME/bin:$PATH
-export PATH=$PATH:$M2_HOME/bin
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$M2_HOME/bin:$GRADLE_HOME/bin:$PATH
+export PATH=$SOFT_HOME:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib
 
-#export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/10/bin
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
-#for Clojure
-#export PATH=~/Software/Leiningen:$PATH
+export PATH="/usr/local/Homebrew/bin:$PATH"
+
+# for Clojure
+# export PATH=~/Software/Leiningen:$PATH
 
 # For Flutter
-export PATH=~/Documents/Install/flutter/bin:$PATH
+# export PATH=~/Documents/Install/flutter/bin:$PATH
 
 # For Android
 
@@ -108,27 +108,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Fix 'command not found'.
 export PATH=$PATH:$(npm prefix -g)/bin
-
-# ruenv
-# eval "$(rbenv init -)"
-export PATH="/Users/chenmaomao/.rbenv/shims:${PATH}"
-export RBENV_SHELL=zsh
-source '/usr/local/Cellar/rbenv/1.1.2/libexec/../completions/rbenv.zsh'
-command rbenv rehash 2>/dev/null
-rbenv() {
-  local command
-  command="${1:-}"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  rehash|shell)
-    eval "$(rbenv "sh-$command" "$@")";;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -146,35 +125,34 @@ alias tospace='ln -sfn /Users/kimi/Github/Dotfiles/spacemacs ~/.emacs.d'
 alias toorigin='ln -sfn /Users/kimi/Github/Dotfiles/emacs.d/ ~/.emacs.d'
 alias topurcell='ln -sfn /Users/kimi/Github/Dotfiles/purcell.emacs ~/.emacs.d'
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Add flutter related directory to path.
-export PATH="$PATH":"$HOME/Documents/Install/flutter/.pub-cache/bin"
-
-export PATH="$PATH":"$HOME/Documents/Scripts/"
-
-# Aliases for aria2
-alias ds='aria2c --conf-path=/Users/chenmaomao/.aria2.conf -D'
-
 # docker
 alias dockerkill='docker kill $(docker ps -a -q)'
 alias dockercleanc='docker rm $(docker ps -a -q)'
 alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
 alias dockerclean='dockercleanc || true && dockercleani'
 
-#export http_proxy=http://127.0.0.1:1087
-#export https_proxy=$http_proxy
-#export NO_PROXY='127.0.0.1,localhost'
-alias goproxy='export http_proxy=http://127.0.0.1:1087 https_proxy=http://127.0.0.1:1087'
+alias goproxy='export http_proxy=http://127.0.0.1:51837 https_proxy=http://127.0.0.1:51837'
 alias disproxy='unset http_proxy https_proxy'
 
 # git rm --cached
 alias ignore='git rm --cached $1'
 
+## For t2Emop Proxy Tunnel
+alias t2emop_on='ssh -fN t2emop-proxy'
+alias t2emop_check='ssh -O check t2emop-proxy'
+alias t2emop_off='ssh -O exit t2emop-proxy'
 
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-export PATH="$PATH":"$HOME/Documents/Install/platform-tools"
+## For prodEmop Proxy Tunnel
+alias prodemop_on='ssh -fN prodemop-proxy'
+alias prodemop_check='ssh -O check prodemop-proxy'
+alias prodemop_off='ssh -O exit prodemop-proxy'
 
-alias swaggereditor='docker run -d -p 8082:8080 swaggerapi/swagger-editor'
-export PATH="/usr/local/sbin:$PATH"
+alias t2emopproxy='export http_proxy=http://127.0.0.1:1078 https_proxy=http://127.0.0.1:1078'
+alias prodemopproxy='export http_proxy=http://127.0.0.1:1079 https_proxy=http://127.0.0.1:1079'
+
+export PATH="/usr/local/opt/kibana@6/bin:$PATH"
+# alias ssh="assh wrapper ssh --"
+alias k=kubectl
+
+# alias mod='bc <<< $1/100%8+1'
+# alias mod='bc <<< (("$1"/100%8+1))'
