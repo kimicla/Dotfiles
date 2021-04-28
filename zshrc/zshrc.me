@@ -78,13 +78,14 @@ export LC_ALL=en_US.UTF-8
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export M2_HOME=~/Software/Maven
-export GRADLE_HOME=~/Software/Gradle
-export GRADLE_USER_HOME=~/.gradle
+# export GRADLE_HOME=~/Software/Gradle
+# export GRADLE_USER_HOME=~/.gradle
 export SOFT_HOME=~/Software/bin
 export EMACS="*term*"
 
 export PATH=$JAVA_HOME/bin:$PATH
-export PATH=$M2_HOME/bin:$GRADLE_HOME/bin:$PATH
+export PATH=$M2_HOME/bin:$PATH
+# export PATH=$GRADLE_HOME/bin:$PATH
 export PATH=$SOFT_HOME:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib
 
