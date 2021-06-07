@@ -52,7 +52,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse nvm)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git emacs git-flow gradle mvn osx ruby sudo autojump docker)
+plugins=(git emacs git-flow gradle mvn osx ruby sudo autojump docker zsh-autosuggestions enhancd)
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -98,9 +98,11 @@ export PATH="/usr/local/Homebrew/bin:$PATH"
 # export PATH=~/Software/Leiningen:$PATH
 
 # For Flutter
-# export PATH=~/Documents/Install/flutter/bin:$PATH
+export PATH=~/Github/flutter/bin:$PATH
 
 # For Android
+export ANDROID_HOME=/Users/kimichen/Library/Android/sdk
+
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -125,6 +127,8 @@ alias es='emacs --daemon'
 alias tospace='ln -sfn /Users/kimi/Github/Dotfiles/spacemacs ~/.emacs.d'
 alias toorigin='ln -sfn /Users/kimi/Github/Dotfiles/emacs.d/ ~/.emacs.d'
 alias topurcell='ln -sfn /Users/kimi/Github/Dotfiles/purcell.emacs ~/.emacs.d'
+alias toemacs='ln -sfn /Users/kimichen/Github/kimi-emacs ~/.emacs.d'
+alias todoom='ln -sfn /Users/kimichen/Github/doom-emacs ~/.emacs.d'
 
 # docker
 alias dockerkill='docker kill $(docker ps -a -q)'
