@@ -144,22 +144,9 @@ alias disproxy='unset http_proxy https_proxy'
 # git rm --cached
 alias ignore='git rm --cached $1'
 
-## For t2Emop Proxy Tunnel
-alias t2emop_on='ssh -fN t2emop-proxy'
-alias t2emop_check='ssh -O check t2emop-proxy'
-alias t2emop_off='ssh -O exit t2emop-proxy'
-
-## For prodEmop Proxy Tunnel
-alias prodemop_on='ssh -fN prodemop-proxy'
-alias prodemop_check='ssh -O check prodemop-proxy'
-alias prodemop_off='ssh -O exit prodemop-proxy'
-
-alias t2emopproxy='export http_proxy=http://127.0.0.1:1078 https_proxy=http://127.0.0.1:1078'
-alias prodemopproxy='export http_proxy=http://127.0.0.1:1079 https_proxy=http://127.0.0.1:1079'
 
 export PATH="/usr/local/opt/kibana@6/bin:$PATH"
 # alias ssh="assh wrapper ssh --"
 alias k=kubectl
 
-# alias mod='bc <<< $1/100%8+1'
-# alias mod='bc <<< (("$1"/100%8+1))'
+
