@@ -53,7 +53,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse nvm)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git emacs git-flow gradle mvn osx ruby sudo autojump docker zsh-autosuggestions enhancd zsh-wakatime)
+plugins=(git emacs git-flow gradle mvn macos ruby sudo autojump docker zsh-autosuggestions)
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -77,7 +77,7 @@ export LC_ALL=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_HOME="$(/usr/libexec/java_home -v17)"
 export M2_HOME=~/Software/Maven
 export GRADLE_HOME=~/Software/Gradle
 export GRADLE_USER_HOME=~/.gradle
@@ -89,9 +89,6 @@ export PATH=$M2_HOME/bin:$PATH
 export PATH=$GRADLE_HOME/bin:$PATH
 export PATH=$SOFT_HOME:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
 
 export PATH="/usr/local/Homebrew/bin:$PATH"
 
@@ -137,16 +134,13 @@ alias dockercleanc='docker rm $(docker ps -a -q)'
 alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
 alias dockerclean='dockercleanc || true && dockercleani'
 
-# alias goproxy='export http_proxy=http://127.0.0.1:51837 https_proxy=http://127.0.0.1:51837'
 alias goproxy='export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153'
+alias opproxy='export https_proxy=http://192.168.10.1:7890;export http_proxy=http://192.168.10.1:7890;export all_proxy=socks5://192.168.10.1:7891'
 alias disproxy='unset http_proxy https_proxy'
 
 # git rm --cached
 alias ignore='git rm --cached $1'
 
-
-export PATH="/usr/local/opt/kibana@6/bin:$PATH"
-# alias ssh="assh wrapper ssh --"
-alias k=kubectl
+alias ssh="assh wrapper ssh --"
 
 
