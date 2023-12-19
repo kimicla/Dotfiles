@@ -88,7 +88,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 export PATH=$M2_HOME/bin:$PATH
 export PATH=$GRADLE_HOME/bin:$PATH
 export PATH=$SOFT_HOME:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib
 
 export PATH="/usr/local/Homebrew/bin:$PATH"
 
@@ -106,7 +105,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Fix 'command not found'.
-export PATH=$PATH:$(npm prefix -g)/bin
+# export PATH=$PATH:$(npm prefix -g)/bin
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
