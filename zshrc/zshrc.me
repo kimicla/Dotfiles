@@ -126,6 +126,8 @@ alias toemacs='ln -sfn /Users/kimichen/Github/kimi-emacs ~/.emacs.d'
 alias todoom='ln -sfn /Users/kimichen/Github/doom-emacs ~/.emacs.d'
 
 # docker
+export PATH=$HOME/.docker/bin:$PATH
+export DOCKER_CLI_HINTS=false 
 alias dockerkill='docker kill $(docker ps -a -q)'
 alias dockercleanc='docker rm $(docker ps -a -q)'
 alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
