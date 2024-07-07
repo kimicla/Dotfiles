@@ -5,3 +5,4 @@ DOMAIN-SUFFIX,zoom.us
 
 # > GPT
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,anthropic.com
