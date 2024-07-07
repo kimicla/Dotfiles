@@ -7,3 +7,7 @@ DOMAIN-SUFFIX,adjust.com
 DOMAIN-SUFFIX,scorecardresearch.com
 # > Stackoverflow
 DOMAIN-SUFFIX,stackoverflow.com
+
+# > GPT
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,anthropic.com
