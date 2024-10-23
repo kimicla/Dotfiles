@@ -53,7 +53,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse nvm)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git emacs git-flow gradle mvn macos sudo autojump docker zsh-autosuggestions)
+plugins=(git emacs git-flow gradle mvn macos sudo autojump  zsh-autosuggestions)
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -126,12 +126,12 @@ alias toemacs='ln -sfn /Users/kimichen/Github/kimi-emacs ~/.emacs.d'
 alias todoom='ln -sfn /Users/kimichen/Github/doom-emacs ~/.emacs.d'
 
 # docker
-export PATH=$HOME/.docker/bin:$PATH
-export DOCKER_CLI_HINTS=false 
-alias dockerkill='docker kill $(docker ps -a -q)'
-alias dockercleanc='docker rm $(docker ps -a -q)'
-alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
-alias dockerclean='dockercleanc || true && dockercleani'
+#export PATH=$HOME/.docker/bin:$PATH
+#export DOCKER_CLI_HINTS=false 
+#alias dockerkill='docker kill $(docker ps -a -q)'
+#alias dockercleanc='docker rm $(docker ps -a -q)'
+#alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
+#alias dockerclean='dockercleanc || true && dockercleani'
 
 alias goproxy='export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153'
 alias opproxy='export https_proxy=http://192.168.10.1:7890;export http_proxy=http://192.168.10.1:7890;export all_proxy=socks5://192.168.10.1:7891'
@@ -142,4 +142,6 @@ alias ignore='git rm --cached $1'
 
 alias ssh="assh wrapper ssh --"
 
+
+export PATH="/usr/local/sbin:$PATH"
 

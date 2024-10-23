@@ -1,4 +1,4 @@
 # > Citi.com
 IP-CIDR,192.193.130.23/32
 DOMAIN-SUFFIX,citi.com
-DOMAIN-SUFFIX,zoom.us
+PROCESS-NAME,zoom.us
