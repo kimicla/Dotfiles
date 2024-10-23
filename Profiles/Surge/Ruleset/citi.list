@@ -2,3 +2,4 @@
 IP-CIDR,192.193.130.23/32
 DOMAIN-SUFFIX,citi.com
 PROCESS-NAME,zoom.us
+PROCESS-name,vmware-view
