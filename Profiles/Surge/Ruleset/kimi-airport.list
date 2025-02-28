@@ -1,13 +1,18 @@
-# > Spotify
-DOMAIN-SUFFIX,facebook.net
-DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,scdn.co
-DOMAIN-SUFFIX,mixpanel.com
-DOMAIN-SUFFIX,adjust.com
-DOMAIN-SUFFIX,scorecardresearch.com
-# > Stackoverflow
-DOMAIN-SUFFIX,stackoverflow.com
-
 # > GPT
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
+
+PROCESS-NAME,/Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin)
+PROCESS-NAME,/Applications/Cursor.app/Contents/Frameworks/Cursor Helper.app/Contents/MacOS/Cursor Helper
+
+DOMAIN-SUFFIX,withgoogle.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,cloud.google.com
+DOMAIN-SUFFIX,tensorflow.org
+DOMAIN-SUFFIX,tensorflowjs.org
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,labs.google
